@@ -1,0 +1,19 @@
+#PROGRAM 2
+
+def create_dictionary(words):
+    d={}
+    for word in words:
+        first=word[0].upper()
+        if first not in d:
+            d[first]=[word]
+        else:
+            d[first].append(word)
+            
+    return d
+
+
+s = input("Enter a string separated by spaces  :  ")
+words=s.split()
+result1 = create_dictionary(words)
+for key,value in sorted(result1.items()):
+    print(f"{key}:{sorted(value)}")
